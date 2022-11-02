@@ -1,0 +1,480 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './element-variables.scss';
+@import './sidebar.scss';
+html,
+body {
+    // min-height: 100vh;
+    min-height: 100%;
+    margin: 0;
+    background: rgba(242, 243, 245, 1);
+}
+
+* {
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    font-weight: 700;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+#app {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.padding-content {
+    padding: 4px 0;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.pr-5 {
+    padding-right: 5px;
+}
+
+.pl-5 {
+    padding-left: 5px;
+}
+
+.mt8 {
+    margin-top: 8px;
+}
+
+.mt10{
+    margin-top: 10px;
+}
+.mt40 {
+    margin-top: 40px;
+}
+
+.mt32 {
+    margin-top: 32px;
+}
+
+.mt100 {
+    margin-top: 100px;
+}
+
+.ml30 {
+    margin-left: 30px;
+}
+
+.mb16 {
+    margin-bottom: 16px;
+}
+
+.h56 {
+    height: 56px;
+}
+
+.block {
+    display: block;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.inlineBlock {
+    display: block;
+}
+
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: ' ';
+        clear: both;
+        height: 0;
+    }
+}
+
+aside {
+    background: #eef1f6;
+    padding: 8px 24px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    display: block;
+    line-height: 32px;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    color: #2c3e50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    a {
+        color: #337ab7;
+        cursor: pointer;
+        &:hover {
+            color: rgb(32, 160, 255);
+        }
+    }
+}
+
+//main-container全局样式
+.app-container {
+    padding: 20px;
+}
+
+.components-container {
+    margin: 30px 50px;
+    position: relative;
+}
+
+.pagination-container {
+    margin-top: 16px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.sub-navbar {
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    transition: 600ms ease position;
+    background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+    .subtitle {
+        font-size: 20px;
+        color: #fff;
+    }
+    &.draft {
+        background: #d0d0d0;
+    }
+    &.deleted {
+        background: #d0d0d0;
+    }
+}
+
+.link-type,
+.link-type:focus {
+    color: #337ab7;
+    cursor: pointer;
+    &:hover {
+        color: rgb(32, 160, 255);
+    }
+}
+
+.filter-container {
+    padding-bottom: 10px;
+    .filter-item {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 10px;
+    }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+    line-height: 16px;
+}
+
+.multiselect--active {
+    z-index: 100 !important;
+}
+
+// 滚动条样式
+// ::-webkit-scrollbar {
+//     /*滚动条整体样式*/
+//     width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+//     height: 1px;
+//   }
+//   ::-webkit-scrollbar-thumb {
+//     /*滚动条里面小方块*/ 
+//     border-radius: 10px;
+//     box-shadow: inset 0 0 5px rgba(97, 184, 179, 0.1);
+//     background: #00000040;
+//   }
+//   ::-webkit-scrollbar-track {
+//     /*滚动条里面轨道*/
+//     box-shadow: inset 0 0 5px rgba(87, 175, 187, 0.1);
+//     border-radius: 10px;
+//     background: #ededed;
+//   }
+// 形成自己的icon图标
+// 问号
+.el-icon-my-question {
+    background: url("~@/assets/img/question.png") center no-repeat;
+    background-size: 14px 14px;
+}
+
+.el-icon-my-question:before {
+    content: "替";
+    font-size: 14px;
+    visibility: hidden;
+}
+
+.el-icon-my-question {
+    font-size: 14px;
+}
+
+.el-icon-my-question:before {
+    content: "\e611";
+}
+
+// 必填星
+.el-icon-my-required {
+    background: url("~@/assets/img/required.png") center no-repeat;
+    background-size: 6px 7px;
+}
+
+.el-icon-my-required:before {
+    content: "替";
+    font-size: 7px;
+    visibility: hidden;
+}
+
+.el-icon-my-required:before {
+    content: "\e611";
+}
+
+// 改变进度条的样式
+.el-progress-bar__inner {
+    background-image: linear-gradient( 90deg, #48cfa2 100%, rgba(5, 182, 135, 0.25) 25%);
+}
+
+.el-progress-bar__outer {
+    background-color: #f2f3f5;
+}
+
+//修改MessageBox 弹框的样式
+.message-logout {
+    width: 320px;
+    height: 162px;
+}
+
+.el-notification.right {
+    width: 320px;
+    height: 56px;
+    top: 70% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+.el-icon-success:before {
+    color: #05b687;
+}
+
+// 修改icon样式
+.el-icon-paperclip:before {
+    color: #2190cc;
+}
+
+//可以点击的文字样式
+.click-text {
+    cursor: pointer!important;
+    color: #2190cc!important;
+    text-decoration: underline!important;
+}
+
+// 字体颜色
+.text-blue {
+    color: #2190cc;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-gray {
+    color: gray;
+}
+
+.text-D9 {
+    color: #000000D9
+}
+
+.fileText {
+    padding-top: 8px;
+    color: #00000073
+}
+
+// 生成从1-100的内外边距 使用例子：pt10 上内边距 10px
+@for $i from 1 through 100 {
+    .pt#{$i} {
+        padding-top: (1px * $i);
+    }
+    ;
+    .pb#{$i} {
+        padding-bottom: (1px * $i);
+    }
+    ;
+    .pl#{$i} {
+        padding-left: (1px * $i);
+    }
+    ;
+    .pr#{$i} {
+        padding-right: (1px * $i);
+    }
+    ;
+    .mt#{$i} {
+        margin-top: (1px * $i);
+    }
+    ;
+    .mb#{$i} {
+        margin-bottom: (1px * $i);
+    }
+    ;
+    .mr#{$i} {
+        margin-right: (1px * $i);
+    }
+    ;
+    .ml#{$i} {
+        margin-left: (1px * $i);
+    }
+}
+
+// 生成从14-50px的字体大小 使用例子：f20 字体大小 20px
+@for $i from 14 through 50 {
+    .f#{$i} {
+        font-size: (1px * $i);
+    }
+}
+
+// 弹性布局
+.flex {
+    display: flex;
+}
+
+.flex-ac {
+    display: flex;
+    align-items: center;
+}
+
+.flex-jc {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-js {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-cc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-je {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-col-ac {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// 填报页面的标题样式
+.fillTitle {
+    font-family: "PingFang SC";
+    font-size: 16px;
+    font-weight: 600;
+    border-left: #2190cc solid 4px;
+    padding-left: 8px;
+    margin-bottom: 24px;
+    color: #000;
+}
+
+// 营业执照样式
+.businessTitle {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 12px;
+    color: #000;
+}
+
+.business-a {
+    text-decoration: underline;
+    color: #2190cc;
+    margin-left: 7px;
+}
+
+.business-a:hover {
+    color: #2190cc;
+    text-decoration: underline;
+}
+
+//确认发布样式
+.previewText {
+    font-family: "PingFang SC";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #ffa245;
+    margin: 32px 0 30px 0;
+}
+
+// 输入框单位样式
+.megawatt {
+    margin-right: 10px;
+    font-style: normal
+}

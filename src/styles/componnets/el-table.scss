@@ -1,0 +1,42 @@
+// thead部分的样式修改
+.el-table thead th {
+    height: 28px;
+    line-height: 28px;
+    // padding: 0px 10px 0px 10px;
+    color: #000000a6;
+    background: #f7f8fa !important;
+}
+// tbody部分的样式修改
+.el-table__body td,
+.el-table__body th {
+    height: 28px;
+    line-height: 28px;
+    padding: 0px 10px 0px 10px;
+    color: #757575;
+}
+// 表格操作按钮的颜色
+.el-table__body tr td div .el-button{
+    color: #000000A6;
+}
+// 表格border颜色修改
+// .el-table__body tr:hover>td{
+//   background: #DBDCDE;
+// }
+// .el-table--group, .el-table--border {
+//   border-top: 1px solid #DBDCDE;
+//   border-left: 1px solid #DBDCDE;
+// }
+// .el-table th.is-leaf, .el-table td {
+//   border-bottom: 1px solid #DBDCDE;
+//   border-right: 1px solid #DBDCDE;
+// }
+//  .el-table tr td{
+//   border-bottom: 1px solid #DBDCDE;
+//   border-right: 1px solid #DBDCDE;
+// }
+// .el-table--group::after, .el-table--border::after, .el-table::before {
+//   content: '';
+//   position: absolute;
+//   background-color: #DBDCDE;
+//   z-index: 1;
+// }

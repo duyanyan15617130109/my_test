@@ -1,0 +1,39 @@
+ .flex {
+     display: flex;
+ }
+ 
+ .flex-ac {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .flex-acjc {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ .flex-acjb {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+ 
+ .flex-acje {
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+ }
+ 
+ .flex-jb {
+     display: flex;
+     justify-content: space-between;
+ }
+ 
+ .flex-grow {
+     flex-grow: 1;
+ }
+ 
+ .flex-wrap {
+     flex-wrap: wrap;
+ }
